@@ -1,14 +1,7 @@
 from config import *
 import requests as r
 
-def addressByName(name):
-    id = geckoIdByName(name)
-    if len(id):
-        pass
-    else:
-        return 1
-
-def geckoIdByName(name):
+def geckoIdByName(name:str):
     response = r.get(API_URL + f"/search?query={name}")
     if response:
         data = response.json()
